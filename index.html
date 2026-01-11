@@ -5,27 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rıdvan Beyin Sitesi</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
       color: #fff;
       background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
       max-width: 800px;
-      margin: 40px auto;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.7);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
     h1 {
       text-align: center;
       color: #7dd3fc;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 3em;
+      animation: fadeIn 2s ease;
+    }
+
+    h3 {
+      text-align: center;
+      color: #ffd166;
+      font-weight: 400;
+      margin-top: 5px;
+      font-size: 1.5em;
     }
 
     h2 {
@@ -38,6 +60,30 @@
     p {
       line-height: 1.6;
       font-size: 16px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    p:hover {
+      color: #ffd166;
+      transform: scale(1.02);
+    }
+
+    .socials {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 24px;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: #ffd166;
     }
 
     .footer {
@@ -47,11 +93,16 @@
       opacity: 0.7;
     }
   </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
   <div class="container">
-    <h1>Rıdvan Beyin Sitesi</h1>
+    <h1>Rıdvan</h1>
+    <h3>Rick Sanchez</h3>
 
     <h2>Hakkımda</h2>
     <p>
@@ -70,6 +121,15 @@
       Site hem bilgisayar hem de mobil cihazlarla uyumludur ve her yerde
       sorunsuz şekilde görüntülenebilir.
     </p>
+
+    <div class="socials">
+      <a href="https://discord.com/users/821396845103939614" target="_blank">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://instagram.com/rdvannnss/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
 
     <div class="footer">
       <p>Hazırlayan: Rıdvan</p>
