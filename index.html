@@ -24,20 +24,30 @@
       align-items: center;
     }
 
-    /* ===== DÖNEN PORTAL ===== */
+    /* ===== DÖNEN PORTAL + RENK GEÇİŞİ ===== */
     .portal {
       position: absolute;
       width: 500px;
       height: 500px;
-      background: conic-gradient(from 0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.15), rgba(255,255,255,0.05));
       border-radius: 50%;
-      animation: rotatePortal 20s linear infinite;
+      animation: rotatePortal 20s linear infinite, portalColor 10s ease-in-out infinite alternate;
       z-index: 0;
     }
 
     @keyframes rotatePortal {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+
+    @keyframes portalColor {
+      0% { background: conic-gradient(from 0deg, #7dd3fc33, #ffd16633, #7dd3fc33);}
+      50% { background: conic-gradient(from 0deg, #ffd16633, #7dd3fc33, #ffd16633);}
+      100% { background: conic-gradient(from 0deg, #7dd3fc33, #ffd16633, #7dd3fc33);}
+    }
+
+    .portal:hover {
+      transform: scale(1.05) rotate(360deg);
+      transition: transform 0.5s ease;
     }
 
     /* ===== YILDIZLAR ===== */
@@ -47,13 +57,19 @@
       height: 2px;
       background: white;
       border-radius: 50%;
-      animation: twinkle 3s infinite;
+      animation: twinkle 3s infinite, starMove 4s infinite alternate;
       z-index: 1;
     }
 
     @keyframes twinkle {
       0%,100% { opacity: 0.2; transform: scale(1);}
       50% { opacity: 1; transform: scale(1.5);}
+    }
+
+    @keyframes starMove {
+      0% { transform: translate(0,0);}
+      50% { transform: translate(2px, -2px);}
+      100% { transform: translate(0,0);}
     }
 
     /* ===== CONTAINER ===== */
@@ -67,6 +83,7 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.7);
       text-align: center;
       animation: fadeIn 2s ease;
+      backdrop-filter: blur(5px);
     }
 
     @keyframes fadeIn {
