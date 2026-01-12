@@ -17,14 +17,33 @@
       margin: 0;
       font-family: 'Roboto', sans-serif;
       color: #fff;
-      background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+      background: radial-gradient(circle at 50% 50%, #1e3c72, #2a5298, #6a11cb);
       min-height: 100vh;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    /* ===== YILDIZ ANİMASYONU ===== */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; transform: scale(1);}
+      50% { opacity: 1; transform: scale(1.5);}
+    }
+
+    /* ===== CONTAINER ===== */
     .container {
+      position: relative;
+      z-index: 1;
       max-width: 800px;
       background: rgba(0,0,0,0.6);
       border-radius: 20px;
@@ -115,10 +134,25 @@
       font-size: 14px;
       opacity: 0.8;
     }
+
+    /* ===== RESPONSİVE ===== */
+    @media (max-width: 500px){
+      h1 { font-size: 2.2em; }
+      h3 { font-size: 1.2em; }
+      h2 { font-size: 1.4em; }
+    }
+
   </style>
 </head>
 
 <body>
+  <!-- Yıldızlar -->
+  <div class="star" style="top:10%; left:20%; animation-delay:0s;"></div>
+  <div class="star" style="top:40%; left:50%; animation-delay:1s;"></div>
+  <div class="star" style="top:70%; left:30%; animation-delay:2s;"></div>
+  <div class="star" style="top:20%; left:80%; animation-delay:1.5s;"></div>
+  <div class="star" style="top:60%; left:70%; animation-delay:0.5s;"></div>
+
   <div class="container">
     <h1>Rıdvan</h1>
     <h3>Rick Sanchez</h3>
